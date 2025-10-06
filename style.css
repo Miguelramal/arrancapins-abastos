@@ -143,6 +143,20 @@ p {
   text-decoration-thickness: 1.5px;
 }
 
+/* Quitar color y subrayado predeterminado de todos los enlaces */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* ======================== */
 /* ===== Footer ===== */
 /* ======================== */
@@ -225,67 +239,89 @@ p {
   text-decoration-thickness: 1.5px;
 }
 
-/* ======================== */
-/* ===== Versión Móvil ===== */
-/* ======================== */
-
+/* ========================= */
+/* ===== Versión móvil ===== */
+/* ========================= */
 @media (max-width: 768px) {
+  /* Header simplificado */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+  }
 
+  /* Ocultar el título en móvil */
+  .header h1 {
+    display: none;
+  }
+
+  /* CTA a la izquierda */
+  .header .cta {
+    position: static;
+    justify-self: start;
+  }
+
+  .header .cta a p {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  /* Idiomas a la derecha */
+  .header .languages {
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
+  /* Quitar grid del contenedor principal */
   .container {
     display: flex;
     flex-direction: column;
-    padding: 8px;
-    gap: 8px;
-  }
-
-  section { margin-bottom: 8px; }
-
-  h1 { font-size: 28px; line-height: 32px; }
-  h2 { font-size: 18px; line-height: 22px; }
-  p { font-size: 16px; line-height: 20px; }
-
-  /* Columnas -> 1 columna */
-  .columns.three, .columns.four { grid-template-columns: 1fr !important; }
-
-  /* Ilustraciones */
-  .ilu-1, .ilu-3 { width: 100% !important; margin: 0 auto; }
-  .ilu-2, .ilu-4 { width: 50% !important; margin: 0 auto; }
-
-  /* Header: ocultar título */
-  .header h1 { display: none; }
-
-  .header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     padding: 16px;
-    align-items: center;
   }
 
-  .header .cta { position: static; justify-self: start; }
-  .header .languages { position: static; justify-self: end; }
+  /* Todas las columnas pasan a una sola */
+  .columns.three,
+  .columns.four {
+    grid-template-columns: 1fr;
+  }
 
-  /* Footer en columna */
+  /* Ilustraciones 1 y 3: ancho completo */
+  .ilu-1,
+  .ilu-3 {
+    width: 100%;
+  }
+
+  /* Ilustraciones 2 y 4: mitad de ancho */
+  .ilu-2,
+  .ilu-4 {
+    width: 50%;
+  }
+
+  /* Footer a una columna centrado */
   .footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 16px;
-    padding: 24px 16px;
   }
 
-  .footer-logo,
-  .footer-name,
-  .footer-info,
-  .footer-secondary-logo,
-  .footer-support {
-    grid-column: auto;
-    display: flex;
-    justify-content: center;
+  .footer > div {
+    margin-bottom: 16px;
+  }
+
+  .footer-logo img,
+  .footer-secondary-logo img {
+    max-height: 100px;
+  }
+
+  .footer-info {
     align-items: center;
-    flex-direction: column;
   }
 
-  .footer-info { align-items: flex-start; }
-  .footer-item { justify-content: flex-start; }
+  .footer-item {
+    justify-content: center;
+  }
 }
