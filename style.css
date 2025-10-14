@@ -326,6 +326,12 @@ a:visited {
     margin-right: auto;
   }
 
+    .hashtag {
+  text-align: center; /* centrado en móvil */
+  margin-top: 32px;
+  margin-bottom: 48px;
+}
+  
   /* Footer a una columna centrado */
   .footer {
     display: flex;
