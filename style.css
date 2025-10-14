@@ -84,14 +84,23 @@ p {
   line-height: 50px;
 }
 
-/* CTA */
+/* CTA fijo */
 .header .cta {
-  grid-column: 10 / 12;
-  justify-self: end;
   position: fixed;
   top: 40px;
+  right: 140px; /* Ajusta según tu diseño */
   z-index: 1000;
 }
+
+.header .languages {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  gap: 8px;
+  z-index: 1000;
+}
+
 
 .header .cta a {
   text-decoration: none; /* Quita subrayado */
@@ -115,8 +124,6 @@ p {
 
 /* Idiomas */
 .header .languages {
-  grid-column: 12 / 13;
-  justify-self: end;
   display: flex;
   gap: 8px;
   position: fixed;
